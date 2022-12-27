@@ -536,10 +536,6 @@ namespace java {
         constexpr static std::string_view kotlin_type = "";
         constexpr static std::string_view type_sig = "";
 
-        // returns the corresponding array type for the base type
-        constexpr static std::string_view array_type_prefix = "[";
-        constexpr static std::string_view array_type_sig = join_v<array_type_prefix, ArgType<T>::type_sig>;
-
         // unused, included to suppress compiler error messages
         static void native_value(JNIEnv*, jobject value) {}
         static void java_value(JNIEnv* env, const T& value) {}

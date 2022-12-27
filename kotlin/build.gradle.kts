@@ -1,10 +1,9 @@
 plugins {
-    id("java")
-    id("application")
-    id("org.jetbrains.kotlin.jvm") version "1.4.0"
+    kotlin("jvm") version "1.6.21"
+    application
 }
 
-group = "com.kheiron.ktbind"
+group = "hu.info.hunyadi.ktbind"
 version = "1.0.0"
 
 apply(plugin = "java")
@@ -16,18 +15,7 @@ repositories {
 }
 
 dependencies {
-    // Kotlin standard library
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-    // Logging
-    implementation("org.apache.logging.log4j:log4j-api:2.13.0")
-    implementation("org.apache.logging.log4j:log4j-core:2.13.0")
-    runtimeOnly("org.apache.logging.log4j:log4j-slf4j18-impl:2.13.0")
-
-    // Testing
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
-    testImplementation("io.mockk:mockk:1.10.0+")
+    testImplementation(kotlin("test"))
 }
 
 val compileKotlin: org.jetbrains.kotlin.gradle.tasks.KotlinCompile by tasks

@@ -150,7 +150,7 @@ internal class NativeBindingsTest {
     @Test
     fun `passing and returning collections`() {
         assertPrints("[$, a, b, c]") {
-            assertArrayEquals(charArrayOf('a', 'b', 'c', 'd', 'e', 'f').map { it.toByte() }.toByteArray(), Sample.array_of_char(byteArrayOf('$'.toByte(), 'a'.toByte(), 'b'.toByte(), 'c'.toByte())))
+            assertArrayEquals(charArrayOf('a', 'b', 'c', 'd', 'e', 'f').map { it.code.toByte() }.toByteArray(), Sample.array_of_char(byteArrayOf('$'.code.toByte(), 'a'.code.toByte(), 'b'.code.toByte(), 'c'.code.toByte())))
         }
         assertPrints("[0, 0, 1, 1, 2, 3, 5, 8, 13]") {
             assertArrayEquals(intArrayOf(0, 1, 2, 3, 4, 5, 6), Sample.array_of_int(intArrayOf(0, 0, 1, 1, 2, 3, 5, 8, 13)))
