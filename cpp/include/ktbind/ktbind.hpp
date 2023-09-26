@@ -450,7 +450,7 @@ namespace java {
                     case JNI_OK:
                         break;
                     case JNI_EDETACHED:
-                        if (_vm->AttachCurrentThread(reinterpret_cast<void**>(&_env), nullptr) == JNI_OK) {
+                        if (_vm->AttachCurrentThread(&_env, nullptr) == JNI_OK) {
                             assert(_env != nullptr);
                             _attached = true;
                         } else {
